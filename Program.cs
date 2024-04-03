@@ -46,9 +46,10 @@ app.UseRouting();
 
 app.UseAuthorization();
 
-app.MapControllerRoute("pagenumanddefaultletter", "{defaultLetter}/{pageNum}", new { Controller = "Home", action = "Index" });
-app.MapControllerRoute("pagination", "Stuff/{pageNum}", new { Controller = "Home", action = "Index", pageNum = 1 });
-app.MapControllerRoute("defaultLetter", "{defaultLetter}", new { Controller = "Home", action = "Index", pageNum = 1 });
+app.MapControllerRoute("pagenumanddefaultletter", "{defaultLetter}/{pageNum}", new { Controller = "Home", Action = "Index" });
+app.MapControllerRoute("page", "Page/{pageNum}", new { Controller = "Home", Action = "Index", pageNum = 1 });
+app.MapControllerRoute("defaultLetter", "{defaultLetter}", new { Controller = "Home", Action = "Index", pageNum = 1 });
+app.MapControllerRoute("pagination", "Defaults/Page{pageNum}", new { Controller = "Home", Action = "Index", pageNum = 1 });
 
 app.MapRazorPages();
 
