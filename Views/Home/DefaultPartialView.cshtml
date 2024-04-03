@@ -1,0 +1,27 @@
+﻿@using DannyDefaults.Infrastructure
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model Default_Model
+
+<div class="card m-1 p-1">
+    <h4>
+        @Model.DefaultName
+        <span class="badge rounded-pill bg-primary text-white float-end"><small>@Model.DefaultName served</small></span>
+    </h4>
+
+    <ul>
+        <li>Default ID: @Model.DefaultId</li>
+        <li>Default Date: @Model.DefaultDate</li>
+        <li>Default Name: @Model.DefaultName</li>
+        <li>Default Letter: @Model.DefaultLetter</li>
+    </ul>
+    <form id=@Model.DefaultId method="post" asp-page="/Cart">
+        <input type="hidden" asp-for="DefaultId" />
+        <input type="hidden" name="returnUrl" value="@ViewContext.HttpContext.Request.PathAndQuery()" />
+        <button type="submit" class="btn-outline-success btn-sm float-end">Donate</button>
+    </form>
+</div>

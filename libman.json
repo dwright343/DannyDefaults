@@ -1,0 +1,10 @@
+{
+  "version": "1.0",
+  "defaultProvider": "cdnjs",
+  "libraries": [
+    {
+      "destination": "wwwroot/lib/font-awesome/", // hit save on this file and you should see the package load for client side
+      "library": "font-awesome@6.2.1"
+    }
+  ]
+}
