@@ -14,7 +14,7 @@ namespace DannyDefaults.Controllers
             _repo = temp;
         }
 
-        public IActionResult Index(int pageNum, string defaultLetter) // name this pageNum, because "page" means something to the .NET environment
+        public IActionResult Index(int pageNum=1, string? defaultLetter) // name this pageNum, because "page" means something to the .NET environment
         {
             int pageSize = 5;
             var PageInfo = new DefaultListViewModel

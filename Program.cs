@@ -1,6 +1,7 @@
 using DannyDefaults.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
+using DannyDefaults.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("DannyDefaultsIdentityDbContextConnection") ?? throw new InvalidOperationException("Connection string 'DannyDefaultsIdentityDbContextConnection' not found.");
@@ -19,7 +20,7 @@ builder.Services.AddDbContext<Default_Context>(options =>
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-    .AddEntityFrameworkStores<DannyDefaultsIdentityDbContext>();
+    .AddEntityFrameworkStores<ApplicationDbContext>();
 
 builder.Services.AddScoped<I_Repository, EF_Repository>();
 
